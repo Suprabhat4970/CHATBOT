@@ -13,5 +13,6 @@ openpyxl
 requests
 yfinance
 duckduckgo-search
+ddgs
 pytesseract
 pdf2image
