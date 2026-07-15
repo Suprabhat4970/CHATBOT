@@ -1,0 +1,17 @@
+streamlit
+langgraph
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+langgraph-checkpoint-sqlite
+python-dotenv
+pypdf
+python-docx
+pandas
+openpyxl
+requests
+yfinance
+duckduckgo-search
+pytesseract
+pdf2image
