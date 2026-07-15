@@ -16,3 +16,4 @@ duckduckgo-search
 ddgs
 pytesseract
 pdf2image
+ddgs
