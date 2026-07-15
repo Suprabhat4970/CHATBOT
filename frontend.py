@@ -1,4 +1,6 @@
 from backend import read_uploaded_file
+import subprocess
+import importlib.util
 import streamlit as st
 from backend import (
     chatbot,
@@ -10,6 +12,44 @@ from backend import (
 from langchain_core.messages import HumanMessage, AIMessage
 import uuid
 import os
+
+st.title("Environment Check")
+
+packages = [
+    "streamlit",
+    "langgraph",
+    "langchain",
+    "langchain_core",
+    "langchain_community",
+    "langchain_google_genai",
+    "langgraph_checkpoint_sqlite",
+    "dotenv",
+    "pypdf",
+    "docx",
+    "pandas",
+    "openpyxl",
+    "requests",
+    "yfinance",
+    "duckduckgo_search",
+    "pytesseract",
+    "pdf2image"
+]
+
+
+for package in packages:
+    installed = importlib.util.find_spec(package) is not None
+    st.write(package, "✅ Installed" if installed else "❌ Missing")
+
+
+st.subheader("pip list from Streamlit VM")
+
+result = subprocess.run(
+    ["pip", "list"],
+    capture_output=True,
+    text=True
+)
+
+st.text(result.stdout)
 
 # **************************************** utility functions *************************
 
